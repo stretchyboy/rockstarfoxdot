@@ -1,10 +1,21 @@
-from setuptools import setup
+import setuptools
 
-setup(
-   name='rockstarfoxdot',    # This is the name of your PyPI-package.
-   version='0.101',                          # Update the version number for new releases
-   url="https://github.com/stretchyboy/rockstarfoxdot",
-   author="Martyn Eggleton",
-   author_email="martyn.eggleton@gmail.com",
-   scripts=['rockstarfoxdot.py']                  # The name of your scipt, and also the command you'll be using for calling it
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+
+setuptools.setup(
+    name='rockstarfoxdot',    # This is the name of your PyPI-package.
+    version='0.104',                          # Update the version number for new releases
+    url="https://github.com/stretchyboy/rockstarfoxdot",
+    author="Martyn Eggleton",
+    author_email="martyn.eggleton@gmail.com",
+    description="Using using the RockStar EsoLang to make music in FoxDot ",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    packages=setuptools.find_packages(),
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
 )
