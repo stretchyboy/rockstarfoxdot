@@ -81,6 +81,12 @@ def extract(dct, namespace=None):
     if not namespace: namespace = globals()
     namespace.update(dct)
 
+def rockstar(text, namespace=None, printname=None):
+    if (os.path.isfile(text)):
+        rsf(text, namespace, printname)
+    else:
+        rs(text, namespace, printname)
+
 def _rsf(filename, namespace=None, printname=None):
     logger.info("Running _rsf "+filename)
     f = open(filename, "r")
@@ -93,12 +99,12 @@ def reportChange(filename):
     logger.info(msg)
     print(msg)
 
-@timeout_decorator.timeout(5)
 def rsf(filename, namespace=None, printname=None):
     _rsf(filename, namespace, printname)
     do_change = functools.partial(reportChange, filename)
     watches[filename] = do_change
 
+@timeout_decorator.timeout(5)
 def rs(lyrics, namespace=None, printname=None):
     if printname:
         converted_code = printname+" = [] \n"
