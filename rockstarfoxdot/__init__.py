@@ -1,5 +1,5 @@
 import traceback
-import sys
+import sys, os
 import timeout_decorator
 import functools
 from rockstarpy.transpile import Transpiler
@@ -63,7 +63,11 @@ def dosomat(event):
         # TODO check its the right file ??
 
         for func in watches:
-            watches[func]()
+            sFuncPath = os.path.abspath(func)
+            sSrcPath = os.path.abspath(event.src_path)
+            #print(sFuncPath, sSrcPath)
+            if sFuncPath == sSrcPath:
+                watches[func]()
 
 
 some = FileSystemEventHandler()
