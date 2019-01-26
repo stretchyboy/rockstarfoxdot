@@ -84,9 +84,17 @@ def _rsf(filename, namespace=None, printname=None):
     logger.info("lyrics length "+str(len(lyrics)))
     rs(lyrics, namespace, printname)
 
+def reportChange(filename):
+    msg = "Changed "+filename
+    logger.info(msg)
+    print(msg)
+
 @timeout_decorator.timeout(5)
 def rsf(filename, namespace=None, printname=None):
     _rsf(filename, namespace, printname)
+    do_change = functools.partial(reportChange, filename)
+    watches[filename] = do_change
+
 
 def stalk(filename, namespace=None, printname=None):
     _rsf(filename, namespace, printname)
