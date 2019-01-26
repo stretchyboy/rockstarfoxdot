@@ -41,16 +41,3 @@ When run this will exec the rockstar from "FizzBuzz.rock" in your FoxDot and pla
 Then it will play those notes on the bass in FoxDot player p1
 
 **rsf()** has a timeout protecting you from infinite loops in the rockstar
-
-#### stalk(filename, namespace=None, printname=None)
-Use rockstar from a file and rerun when the file is changed
-
-```
-stalk("FizzBuzz.rock", locals(), "fizzbuzz")
-```
-
-When run this will exec the rockstar from "FizzBuzz.rock" in your FoxDot and place anything you 'Shout'ed 'Said' or 'Scream'ed into a list called fizzbuzz.
-
-It will rerun this exec whenever the rockstar code is changed
-
-**stalk()** has **no** timeout protecting you from infinite loops in the rockstar

@@ -99,12 +99,6 @@ def rsf(filename, namespace=None, printname=None):
     do_change = functools.partial(reportChange, filename)
     watches[filename] = do_change
 
-
-def stalk(filename, namespace=None, printname=None):
-    _rsf(filename, namespace, printname)
-    do_rsf = functools.partial(_rsf, filename, namespace=namespace, printname=printname)
-    watches[filename] = do_rsf
-
 def rs(lyrics, namespace=None, printname=None):
     if printname:
         converted_code = printname+" = [] \n"
