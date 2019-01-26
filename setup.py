@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='rockstarfoxdot',    # This is the name of your PyPI-package.
-    version='0.104',                          # Update the version number for new releases
+    version='1.0.0',                          # Update the version number for new releases
     url="https://github.com/stretchyboy/rockstarfoxdot",
     author="Martyn Eggleton",
     author_email="martyn.eggleton@gmail.com",
